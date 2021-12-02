@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct GameOverView: View {
+    
+    @Binding var score: Int
+    
     var body: some View {
         VStack {
             Text("Game Over")
             
-            Text("Highscore: 10 points")
+            Text("Highscore: \(score) points")
             
             Text("Please write name for highscore")
         }
     }
 }
 
-struct GameOverView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameOverView()
-    }
-}
+//struct GameOverView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GameOverView(score: )
+//    }
+//}

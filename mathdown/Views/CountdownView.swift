@@ -12,7 +12,7 @@ struct CountdownView: View {
     @State private var timeRemaining = 0
     @Binding var isStartingShow: Bool
     
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let countdownTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         
@@ -34,7 +34,7 @@ struct CountdownView: View {
                 SoundEffect.instance.playSound(sound: .countStart)
             }
         })
-        .onReceive(timer) { time in
+        .onReceive(countdownTimer) { time in
         
             if self.timeRemaining > 0 {
                 self.timeRemaining -= 1

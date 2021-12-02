@@ -11,7 +11,10 @@ struct GameView: View {
     
     @State var isGamePaused = false
     @State var isStartingShow = false
-    @State private var countdownTimer = 0
+    @State var gameTimer = 0
+    @State var isWrong = false
+    @State var isGoingToGameOver = false
+    @State var score = 0
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -27,6 +30,11 @@ struct GameView: View {
             Spacer()
                 .fullScreenCover(isPresented: $isStartingShow) {
                     CountdownView(isStartingShow: $isStartingShow)
+                }
+            
+            Spacer()
+                .fullScreenCover(isPresented: $isGoingToGameOver) {
+                    GameOverView(score: $score)
                 }
             
             GeometryReader { geometry in
@@ -49,73 +57,52 @@ struct GameView: View {
                     
                     ZStack {
                         Rectangle()
-                            .fill(.green)
+                            .fill(isWrong ? .red : .green)
                             .padding(.horizontal)
                         
                         HStack {
                             
                             Rectangle()
                                 .fill(.red)
-                                .frame(width: CGFloat(countdownTimer))
+                                .frame(width: CGFloat(gameTimer))
                             
                             Spacer()
                         }
                         .padding(.horizontal)
-                        
-                        
-                            
+    
                     }
                     .frame(width: geometry.size.width, height: geometry.size.width / 10)
                     
-                    Text("\(GameGenerator.instance.firstNumber) * \(GameGenerator.instance.secondNumber)")
-                        .font(.largeTitle)
-                    
-                    Button {
-                        
-                    } label: {
-                        Text("\(GameGenerator.instance.totalNumber)")
-                            .font(.largeTitle)
-                    }
-                    Button {
-                        GameGenerator.instance.generateNewQuiz()
-                    } label: {
-                        Text("3")
-                    }
-                    Button {
-                        
-                    } label: {
-                        Text("4")
-                    }
-                    Button {
-                        
-                    } label: {
-                        Text("5")
-                    }
+                    GameQuizView(gameTimer: $gameTimer, isWrong: $isWrong, isGoingToGameOver: $isGoingToGameOver, score: $score)
 
-                    
                 }
                 
-            }
-            
-            
-            
+            } 
             
         }
         .navigationBarHidden(true)
+        .onChange(of: isStartingShow == false, perform: { _ in
+            GameGenerator.instance.generateNewQuiz()
+        })
         .onReceive(timer, perform: { time in
-            if self.countdownTimer > 0 {
-                self.countdownTimer -= 10
-            }
-            if countdownTimer == 0 {
-                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
-                    isGamePaused = true
+            
+            if (!isStartingShow) {
+                
+                if self.gameTimer > 0 {
+                    self.gameTimer -= 10
+                }
+                if gameTimer == 0 {
+                    isWrong = true
+                    Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
+                        isGoingToGameOver.toggle()
+                    }
                 }
             }
         })
+        
         .onAppear {
-            countdownTimer = 100
-//            isStartingShow.toggle()
-            
+            isStartingShow.toggle()
+            gameTimer = 100
         }
     }
 }

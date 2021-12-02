@@ -20,6 +20,7 @@
 		06EE755F27593B0C0094668F /* countStart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06EE755E27593B0C0094668F /* countStart.mp3 */; };
 		06EE75612759550A0094668F /* GameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE75602759550A0094668F /* GameGenerator.swift */; };
 		06EE756427595A4F0094668F /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE756327595A4F0094668F /* GameOverView.swift */; };
+		06EE7566275975B20094668F /* GameQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE7565275975B20094668F /* GameQuizView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		06EE755E27593B0C0094668F /* countStart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countStart.mp3; sourceTree = "<group>"; };
 		06EE75602759550A0094668F /* GameGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGenerator.swift; sourceTree = "<group>"; };
 		06EE756327595A4F0094668F /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		06EE7565275975B20094668F /* GameQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameQuizView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				06EE75422757FBB00094668F /* MainMenuView.swift */,
 				06EE75512757FE5B0094668F /* GameView.swift */,
+				06EE7565275975B20094668F /* GameQuizView.swift */,
 				06EE755727592C250094668F /* CountdownView.swift */,
 				06EE7555275803050094668F /* PauseView.swift */,
 				06EE75532757FF200094668F /* HighscoreView.swift */,
@@ -207,6 +210,7 @@
 				06EE75412757FBB00094668F /* mathdownApp.swift in Sources */,
 				06EE756427595A4F0094668F /* GameOverView.swift in Sources */,
 				06EE75612759550A0094668F /* GameGenerator.swift in Sources */,
+				06EE7566275975B20094668F /* GameQuizView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
