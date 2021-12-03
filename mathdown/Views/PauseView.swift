@@ -9,23 +9,28 @@ import SwiftUI
 
 struct PauseView: View {
     var body: some View {
-        NavigationView {
             ZStack {
                 Rectangle()
                     .fill(.yellow)
                     .ignoresSafeArea()
                 
-                NavigationLink {
-                    MainMenuView()
-                        .navigationBarHidden(true)
-                } label: {
-                    Text("Go Back")
-                }
-
+                VStack {
+                    NavigationLink {
+                        CountdownView()
+                            .navigationBarHidden(true)
+                    } label: {
+                        Text("Restart")
+                    }
                     
+                    NavigationLink {
+                        MainMenuView()
+                            .navigationBarHidden(true)
+                    } label: {
+                        Text("Go Back")
+                    }
+                } 
             }
             .navigationBarHidden(true)
-        }
     }
 }
 

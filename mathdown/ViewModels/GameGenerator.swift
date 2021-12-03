@@ -7,9 +7,7 @@
 
 import Foundation
 
-class GameGenerator {
-    
-    static let instance = GameGenerator()
+class GameGenerator: ObservableObject {
     
     var firstNumber: Int = 0
     var secondNumber: Int = 0

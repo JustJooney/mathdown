@@ -8,25 +8,24 @@
 import SwiftUI
 
 struct GameQuizView: View {
-    
-    @State private var isRight = false
-    @Binding var gameTimer: Int
+
+    @Binding var gameTimer: Float
     @Binding var isWrong: Bool
     @Binding var isGoingToGameOver: Bool
     @Binding var score: Int
     
+    @StateObject var gameGenerator = GameGenerator()
+    
+    
     var body: some View {
         VStack{
-            Text("\(GameGenerator.instance.firstNumber) * \(GameGenerator.instance.secondNumber)")
+            Text("\(gameGenerator.firstNumber) * \(gameGenerator.secondNumber)")
                 .font(.largeTitle)
             
-            ForEach(Array(GameGenerator.instance.answers), id: \.self) { answer in
+            ForEach(Array(gameGenerator.answers), id: \.self) { answer in
                 Button {
-                    if answer == GameGenerator.instance.totalNumber {
-                        isRight.toggle()
+                    if answer == gameGenerator.totalNumber {
                         nextQuestion()
-                        score += 1
-                        gameTimer = 100
                     }
                     else {
                         isWrong.toggle()
@@ -43,7 +42,7 @@ struct GameQuizView: View {
                             
                         
                         Text("\(answer)")
-                            .foregroundColor( isWrong ? (answer == GameGenerator.instance.totalNumber ? .green : .red) : .black)
+                            .foregroundColor( isWrong ? (answer == gameGenerator.totalNumber ? .green : .red) : .black)
             
                     }
                     
@@ -51,12 +50,16 @@ struct GameQuizView: View {
                 .disabled(isWrong)
             }
         }
+        .onAppear {
+            gameGenerator.generateNewQuiz()
+            gameTimer = 1.0
+        }
     }
     
     func nextQuestion() {
-        
-        isRight.toggle()
-        GameGenerator.instance.generateNewQuiz()
+        gameGenerator.generateNewQuiz()
+        score += 1
+        gameTimer = 1.0
         
     }
 }

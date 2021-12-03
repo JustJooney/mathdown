@@ -12,6 +12,7 @@ struct GameOverView: View {
     @Binding var score: Int
     
     var body: some View {
+        
         VStack {
             Text("Game Over")
             
@@ -19,6 +20,7 @@ struct GameOverView: View {
             
             Text("Please write name for highscore")
         }
+        .navigationBarHidden(true)
     }
 }
 

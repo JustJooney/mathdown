@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainMenuView: View {
     
+    
     var body: some View {
         
         NavigationView {
@@ -27,7 +28,7 @@ struct MainMenuView: View {
                     
                     VStack(spacing: geometry.size.height / 20) {
                         NavigationLink {
-                            GameView()
+                            CountdownView()
                         } label: {
                             
                             ZStack {
