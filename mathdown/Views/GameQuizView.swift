@@ -30,9 +30,11 @@ struct GameQuizView: View {
                 ForEach(Array(gameGenerator.answers), id: \.self) { answer in
                     Button {
                         if answer == gameGenerator.totalNumber {
+                            SoundEffect.instance.playSound(sound: .rightanswer)
                             nextQuestion()
                         }
                         else {
+                            SoundEffect.instance.playSound(sound: .wronganswer)
                             isWrong.toggle()
                             Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
                                 isGoingToGameOver.toggle()

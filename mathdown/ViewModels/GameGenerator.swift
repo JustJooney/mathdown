@@ -20,7 +20,7 @@ class GameGenerator: ObservableObject {
         self.secondNumber = Int.random(in: 1...12) * levelTwo
         self.totalNumber = firstNumber * secondNumber
         
-        self.answers = [self.totalNumber + 1, self.totalNumber + 2, self.totalNumber - 1, self.totalNumber]
+        self.answers = [self.totalNumber + Int.random(in: 5...9), self.totalNumber + 10, self.totalNumber + Int.random(in: 11...15), self.totalNumber]
 
     }
 }

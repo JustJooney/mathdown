@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		065B68D3275B0CA3003B53A6 /* countStart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 065B68D2275B0CA3003B53A6 /* countStart.mp3 */; };
+		065B68D5275BE5E0003B53A6 /* rightanswer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 065B68D4275BE5E0003B53A6 /* rightanswer.mp3 */; };
+		065B68D7275BE72A003B53A6 /* wronganswer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 065B68D6275BE72A003B53A6 /* wronganswer.mp3 */; };
 		06EE75412757FBB00094668F /* mathdownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE75402757FBB00094668F /* mathdownApp.swift */; };
 		06EE75432757FBB00094668F /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE75422757FBB00094668F /* MainMenuView.swift */; };
 		06EE75452757FBB10094668F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06EE75442757FBB10094668F /* Assets.xcassets */; };
@@ -17,7 +20,6 @@
 		06EE755827592C250094668F /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE755727592C250094668F /* CountdownView.swift */; };
 		06EE755A275937EF0094668F /* SoundEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE7559275937EF0094668F /* SoundEffect.swift */; };
 		06EE755D275939540094668F /* count.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06EE755C275939540094668F /* count.mp3 */; };
-		06EE755F27593B0C0094668F /* countStart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06EE755E27593B0C0094668F /* countStart.mp3 */; };
 		06EE75612759550A0094668F /* GameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE75602759550A0094668F /* GameGenerator.swift */; };
 		06EE756427595A4F0094668F /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE756327595A4F0094668F /* GameOverView.swift */; };
 		06EE7566275975B20094668F /* GameQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE7565275975B20094668F /* GameQuizView.swift */; };
@@ -26,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		065B68D2275B0CA3003B53A6 /* countStart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countStart.mp3; sourceTree = "<group>"; };
+		065B68D4275BE5E0003B53A6 /* rightanswer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rightanswer.mp3; sourceTree = "<group>"; };
+		065B68D6275BE72A003B53A6 /* wronganswer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wronganswer.mp3; sourceTree = "<group>"; };
 		06EE753D2757FBB00094668F /* Mult - Math.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mult - Math.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EE75402757FBB00094668F /* mathdownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mathdownApp.swift; sourceTree = "<group>"; };
 		06EE75422757FBB00094668F /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
@@ -37,7 +42,6 @@
 		06EE755727592C250094668F /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		06EE7559275937EF0094668F /* SoundEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffect.swift; sourceTree = "<group>"; };
 		06EE755C275939540094668F /* count.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = count.mp3; sourceTree = "<group>"; };
-		06EE755E27593B0C0094668F /* countStart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countStart.mp3; sourceTree = "<group>"; };
 		06EE75602759550A0094668F /* GameGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGenerator.swift; sourceTree = "<group>"; };
 		06EE756327595A4F0094668F /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		06EE7565275975B20094668F /* GameQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameQuizView.swift; sourceTree = "<group>"; };
@@ -130,7 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				06EE755C275939540094668F /* count.mp3 */,
-				06EE755E27593B0C0094668F /* countStart.mp3 */,
+				065B68D2275B0CA3003B53A6 /* countStart.mp3 */,
+				065B68D4275BE5E0003B53A6 /* rightanswer.mp3 */,
+				065B68D6275BE72A003B53A6 /* wronganswer.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -193,10 +199,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				065B68D5275BE5E0003B53A6 /* rightanswer.mp3 in Resources */,
+				065B68D3275B0CA3003B53A6 /* countStart.mp3 in Resources */,
 				06EE755D275939540094668F /* count.mp3 in Resources */,
 				06EE75482757FBB10094668F /* Preview Assets.xcassets in Resources */,
+				065B68D7275BE72A003B53A6 /* wronganswer.mp3 in Resources */,
 				06EE75452757FBB10094668F /* Assets.xcassets in Resources */,
-				06EE755F27593B0C0094668F /* countStart.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +375,7 @@
 				PRODUCT_NAME = "Mult - Math";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -397,7 +405,7 @@
 				PRODUCT_NAME = "Mult - Math";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

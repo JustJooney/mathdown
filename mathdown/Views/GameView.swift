@@ -46,6 +46,8 @@ struct GameView: View {
                             }
                         }
                         
+                        Text("Points: \(score)")
+                            .font(.title)
                         
                         
                         ZStack(alignment: .leading) {
@@ -68,16 +70,19 @@ struct GameView: View {
                 }
             }
             .onReceive(timer, perform: { (_) in
-                self.lowerCountdown()
+                if !isGamePaused {
+                    self.lowerCountdown()
+                }
             })
             .navigationBarHidden(true)
     }
     
     func lowerCountdown() {
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { timer in
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { time in
             withAnimation(.default) {
-                if self.gameTimer <= 1 && self.gameTimer > 0.1 {
-                    if score < 20 {
+
+                if self.gameTimer <= 1 && self.gameTimer > 0.1{
+                    if score < 15 {
                         self.gameTimer -= 0.1
                     }
                     else {
@@ -85,12 +90,12 @@ struct GameView: View {
                     }
                 }
                 else {
-                    self.gameTimer = 1
                     isWrong = true
+                    gameTimer = 1
+                    time.invalidate()
                     Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
                         isGoingToGameOver = true
                     }
-                    return timer.invalidate()
                 }
             }
         }

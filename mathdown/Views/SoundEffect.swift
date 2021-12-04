@@ -17,6 +17,8 @@ class SoundEffect {
     enum soundOption: String {
         case count
         case countStart
+        case rightanswer
+        case wronganswer
     }
     
     func playSound(sound: soundOption) {
