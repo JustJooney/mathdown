@@ -14,10 +14,10 @@ class GameGenerator: ObservableObject {
     var totalNumber: Int = 0
     var answers: Set<Int> = [0, 1, 2, 3]
     
-    func generateNewQuiz(){
+    func generateNewQuiz(_ levelTwo: Int = 1){
         
-        self.firstNumber = Int.random(in: 1...12)
-        self.secondNumber = Int.random(in: 1...12)
+        self.firstNumber = Int.random(in: 1...12) * levelTwo
+        self.secondNumber = Int.random(in: 1...12) * levelTwo
         self.totalNumber = firstNumber * secondNumber
         
         self.answers = [self.totalNumber + 1, self.totalNumber + 2, self.totalNumber - 1, self.totalNumber]

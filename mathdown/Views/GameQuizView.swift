@@ -16,39 +16,49 @@ struct GameQuizView: View {
     
     @StateObject var gameGenerator = GameGenerator()
     
+    let columns = [
+        GridItem(.fixed(175)),
+        GridItem(.fixed(175))
+    ]
     
     var body: some View {
         VStack{
-            Text("\(gameGenerator.firstNumber) * \(gameGenerator.secondNumber)")
-                .font(.largeTitle)
+            Text("\(gameGenerator.firstNumber) X \(gameGenerator.secondNumber)")
+                .font(.system(size: 100))
             
-            ForEach(Array(gameGenerator.answers), id: \.self) { answer in
-                Button {
-                    if answer == gameGenerator.totalNumber {
-                        nextQuestion()
-                    }
-                    else {
-                        isWrong.toggle()
-                        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
-                            isGoingToGameOver.toggle()
+            LazyVGrid(columns: columns, spacing: 50) {
+                ForEach(Array(gameGenerator.answers), id: \.self) { answer in
+                    Button {
+                        if answer == gameGenerator.totalNumber {
+                            nextQuestion()
                         }
-                    }
-                } label: {
-                    
-                    ZStack {
-                        Rectangle()
-                            .fill(.white)
-                            .frame(width: 100, height: 100)
-                            
+                        else {
+                            isWrong.toggle()
+                            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
+                                isGoingToGameOver.toggle()
+                            }
+                        }
+                    } label: {
                         
-                        Text("\(answer)")
-                            .foregroundColor( isWrong ? (answer == gameGenerator.totalNumber ? .green : .red) : .black)
-            
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(isWrong ? (answer == gameGenerator.totalNumber ? .green : .red) : .black)
+                                .frame(width: 125, height: 125)
+                                .shadow(color: .gray, radius: 1, x: 0, y: 5)
+                                
+                            
+                            Text("\(answer)")
+                                .font(.system(size: 50))
+                                .foregroundColor(.white)
+                
+                        }
+                        
                     }
-                    
+                    .disabled(isWrong)
                 }
-                .disabled(isWrong)
             }
+            
+            
         }
         .onAppear {
             gameGenerator.generateNewQuiz()
@@ -57,9 +67,26 @@ struct GameQuizView: View {
     }
     
     func nextQuestion() {
-        gameGenerator.generateNewQuiz()
-        score += 1
-        gameTimer = 1.0
         
+        if score > 10 {
+            gameGenerator.generateNewQuiz(2)
+            score += 1
+            gameTimer = 1.0
+        }
+        else {
+            gameGenerator.generateNewQuiz()
+            score += 1
+            gameTimer = 1.0
+        }
+        
+        
+        
+    }
+}
+
+struct GameQuizView_Previews: PreviewProvider {
+    static var previews: some View {
+        GameQuizView(gameTimer: .constant(1.0), isWrong: .constant(false), isGoingToGameOver: .constant(false), score: .constant(0))
+.previewInterfaceOrientation(.portrait)
     }
 }

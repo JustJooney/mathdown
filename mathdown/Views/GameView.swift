@@ -42,6 +42,7 @@ struct GameView: View {
                                     .resizable()
                                     .frame(width: geometry.size.width / 10, height: geometry.size.width / 10)
                                     .padding()
+                                    .foregroundColor(.black)
                             }
                         }
                         
@@ -74,9 +75,9 @@ struct GameView: View {
     
     func lowerCountdown() {
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { timer in
-            withAnimation() {
+            withAnimation(.default) {
                 if self.gameTimer <= 1 && self.gameTimer > 0.1 {
-                    if score < 6 {
+                    if score < 20 {
                         self.gameTimer -= 0.1
                     }
                     else {

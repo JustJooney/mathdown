@@ -24,11 +24,11 @@ struct CountdownView: View {
                 }
                 
                 Rectangle()
-                    .fill(.red)
+                    .fill(.white)
                     .ignoresSafeArea()
                 
                 Text("\(timeRemaining)")
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                     .font(.system(size: 150))
             }
             .onChange(of: timeRemaining, perform: { timeRemain in
