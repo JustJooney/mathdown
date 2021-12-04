@@ -28,7 +28,7 @@ struct MainMenuView: View {
                         
                         Spacer()
                         
-                        Text("Multi - Fast")
+                        Text("MultiTimed")
                             .font(.system(size: 60))
                             .bold()
                         

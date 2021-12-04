@@ -31,7 +31,7 @@
 		065B68D2275B0CA3003B53A6 /* countStart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countStart.mp3; sourceTree = "<group>"; };
 		065B68D4275BE5E0003B53A6 /* rightanswer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rightanswer.mp3; sourceTree = "<group>"; };
 		065B68D6275BE72A003B53A6 /* wronganswer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wronganswer.mp3; sourceTree = "<group>"; };
-		06EE753D2757FBB00094668F /* Mult - Math.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mult - Math.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06EE753D2757FBB00094668F /* MultiTimed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiTimed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EE75402757FBB00094668F /* mathdownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mathdownApp.swift; sourceTree = "<group>"; };
 		06EE75422757FBB00094668F /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		06EE75442757FBB10094668F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		06EE753E2757FBB00094668F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				06EE753D2757FBB00094668F /* Mult - Math.app */,
+				06EE753D2757FBB00094668F /* MultiTimed.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,7 +158,7 @@
 			);
 			name = mathdown;
 			productName = mathdown;
-			productReference = 06EE753D2757FBB00094668F /* Mult - Math.app */;
+			productReference = 06EE753D2757FBB00094668F /* MultiTimed.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -364,7 +364,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -372,7 +372,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joon.mathdown;
-				PRODUCT_NAME = "Mult - Math";
+				PRODUCT_NAME = MultiTimed;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -394,7 +394,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -402,7 +402,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joon.mathdown;
-				PRODUCT_NAME = "Mult - Math";
+				PRODUCT_NAME = MultiTimed;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
