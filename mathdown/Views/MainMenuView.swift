@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainMenuView: View {
     
+    @State var toScoreView = false
     
     var body: some View {
         
@@ -16,51 +17,65 @@ struct MainMenuView: View {
             
             GeometryReader{ geometry in
                 
-                VStack {
+                ZStack {
                     
                     Spacer()
-                    
-                    Text("Title")
-                        .font(.largeTitle)
-                        .bold()
-                    
-                    Spacer()
-                    
-                    VStack(spacing: geometry.size.height / 20) {
-                        NavigationLink {
-                            CountdownView()
-                        } label: {
-                            
-                            ZStack {
-                                Rectangle()
-                                    .foregroundColor(.black)
-                                    .frame(width: geometry.size.width, height: geometry.size.width / 4)
-                                Text("Start")
-                                    .foregroundColor(.white)
-                            }
+                        .sheet(isPresented: $toScoreView) {
+                            HighscoreView()
                         }
+                    
+                    VStack {
                         
-                        NavigationLink {
-                            EmptyView()
-                        } label: {
+                        Spacer()
+                        
+                        Text("Multi - Fast")
+                            .font(.system(size: 60))
+                            .bold()
+                        
+                        Spacer()
+                        
+                        VStack(spacing: 30) {
+                            NavigationLink {
+                                CountdownView()
+                            } label: {
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(.black)
+                                        .frame(width: geometry.size.width * 0.8, height: 70)
+                                        .shadow(color: .gray, radius: 1, x: 0, y: 5)
+                                        
+                                    Text("Start")
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 30))
+                                }
+                            }
                             
-                            ZStack {
-                                Rectangle()
-                                    .foregroundColor(.black)
-                                    .frame(width: geometry.size.width, height: geometry.size.width / 4)
-                                Text("Highscore")
-                                    .foregroundColor(.white)
+                            Button {
+                                toScoreView.toggle()
+                            } label: {
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(.black)
+                                        .frame(width: geometry.size.width * 0.8, height: 70)
+                                        .shadow(color: .gray, radius: 1, x: 0, y: 5)
+                                        
+                                    Text("Score List")
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 30))
+                                }
                             }
                         }
+                        Spacer()
                         
                     }
-
-                    Spacer()
+                    .frame(width: geometry.size.width)
                 }
             }
-            .navigationBarHidden(true)
             .padding()
         }
+        .navigationBarHidden(true)
     }
 }
 

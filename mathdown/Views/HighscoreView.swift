@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct HighscoreView: View {
+    
+    @FetchRequest(entity: ScoreList.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \ScoreList.scorePoint, ascending: false)]) var scoreLists: FetchedResults<ScoreList>
+    
     var body: some View {
-        Text("Highscore")
+        List {
+
+            Text("Score Board")
+                .font(.system(size: 50))
+                .bold()
+        
+            ForEach(0..<scoreLists.count, id: \.self) { score in
+                HStack {
+                    Text("#\(score + 1) \(scoreLists[score].scoreName ?? "")")
+                        .font(.title2)
+                    Spacer()
+                    Text("\(scoreLists[score].scorePoint) points")
+                        .font(.title2)
+                }
+            }
+        }
+        .listStyle(.insetGrouped)
     }
 }
 
