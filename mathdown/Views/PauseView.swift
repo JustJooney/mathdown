@@ -65,6 +65,7 @@ struct PauseView: View {
                 }
             }
         }
+        .environment(\.colorScheme, .light)
         .padding(.horizontal)
         .navigationBarHidden(true)
     }

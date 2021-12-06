@@ -75,6 +75,7 @@ struct MainMenuView: View {
             }
             .padding()
         }
+        .environment(\.colorScheme, .light)
         .navigationBarHidden(true)
     }
 }

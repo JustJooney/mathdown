@@ -28,6 +28,7 @@ struct HighscoreView: View {
                 }
             }
         }
+        .environment(\.colorScheme, .light)
         .listStyle(.insetGrouped)
     }
 }

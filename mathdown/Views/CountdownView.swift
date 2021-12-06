@@ -31,6 +31,7 @@ struct CountdownView: View {
                     .foregroundColor(.black)
                     .font(.system(size: 150))
             }
+            .environment(\.colorScheme, .light)
             .onChange(of: timeRemaining, perform: { timeRemain in
                 if timeRemain > 0 {
                     SoundEffect.instance.playSound(sound: .count)

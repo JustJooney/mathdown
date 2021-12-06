@@ -69,6 +69,7 @@ struct GameView: View {
 
                 }
             }
+            .environment(\.colorScheme, .light)
             .onReceive(timer, perform: { (_) in
                 if !isGamePaused {
                     self.lowerCountdown()

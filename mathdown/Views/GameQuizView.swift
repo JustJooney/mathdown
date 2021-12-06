@@ -62,6 +62,7 @@ struct GameQuizView: View {
             
             
         }
+        .environment(\.colorScheme, .light)
         .onAppear {
             gameGenerator.generateNewQuiz()
             gameTimer = 1.0
